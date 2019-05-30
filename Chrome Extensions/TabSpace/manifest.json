@@ -1,16 +1,17 @@
 {
   "name": "TabSpace",
-  "version": "1.0",
+  "version": "0.1",
   "description": "Organizer for your tabs! Designed for students
   conducting research or seeking online help for programming
   projects",
-  "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+  "permissions": ["activeTab", "declarativeContent", "storage", "tabs"
+  , "contextMenus"],
   "options_page": "options.html",
   "background": {
       "scripts": ["background.js"],
       "persistent": false
     },
-  "page_action": {
+  "browser_action": {
       "default_popup": "popup.html",
       "default_icon": {
         "128": "images/space_icon.png"

@@ -1,15 +1,27 @@
-let changeColor = document.getElementById('changeColor');
+var background = chrome.extension.getBackgroundPage();
 
-chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
-});
+let launchpadButton = document.getElementById('launchpad');
+let addButton = document.getElementById('add');
+let closeAllButton = document.getElementById('closeAll');
 
-changeColor.onclick = function(element) {
-    let color = element.target.value;
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.executeScript(
-          tabs[0].id,
-          {code: 'document.body.style.backgroundColor = "' + color + '";'});
-    });
-  };
+launchpadButton.onclick = function() {
+   window.open("launchpad.html");
+}
+
+addButton.onclick = function() {
+  var x = window.open("launchpad.html");
+  background.windowlist.push(x);
+  if (background.windowlist.length === 0) {
+    window.open("http://youtube.com");
+  }
+  if (background.windowlist.length > 0) {
+    window.open("http://google.com");
+  }
+}
+
+closeAllButton.onclick = function() {
+  for (var i = 0; i < background.windowlist.length; i++) {
+    background.windowlist[i].close();
+  }
+  background.windowlist.length = 0;
+}

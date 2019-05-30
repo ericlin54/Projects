@@ -13,11 +13,11 @@
   "page_action": {
       "default_popup": "popup.html",
       "default_icon": {
-        "512": "images/space_icon.png"
+        "128": "images/space_icon.png"
       }
   },
   "icons": {
-      "512": "images/space_icon.png"
+      "128": "images/space_icon.png"
   },
   "manifest_version": 2
 }

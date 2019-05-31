@@ -21,15 +21,47 @@
      color: white;
      font-size: 100%;
    }
+   .dropdown {
+     position: relative;
+     display: inline-block;
+     height: 15px;
+     width: 100%;
+     outline: white;
+     outline-width: 3px;
+     background-color: black;
+     color: white
+   }
+
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color:black;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     padding: 12px 16px;
+     z-index: 1;
+     color: white;
+   }
+
+   .show {display:block;}
+
    </style>
  </head>
  <body>
+   <script src="jquery.min.js"></script>
    <div title:"Header">
      <img style="position:absolute; TOP:8px; LEFT:5px;" src="images/space_icon.png" width="25" height="25">
      <h1 style="position:absolute; TOP:5px; LEFT:35px;">TabSpace</h1>
    </div>
    <button id="launchpad" style="margin-top:35px">TabSpace Launchpad</button>
-   <button id="add" style="margin-top:3px">Add Tab</button>
+   <div class="dropdown">
+     <button id="add" class="dropbtn" style="margin-top:3px">Add Tab to...</button>
+     <div id="temp" class="dropdown-content">
+       <select class="form-control"  id='folderList' name='folderList'>
+       </select>
+     </div>
+   </div>
+   <button id="addFolder" style="margin-top:3px">Add Folder</button>
    <button id="closeAll" style="margin-top:3px">Close All TabSpace Tabs</button>
    <script src="popup.js"></script>
  </body>

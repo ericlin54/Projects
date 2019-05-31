@@ -17,8 +17,14 @@ launchpadButton.onclick = function() {
 }
 
 addButton.onclick = function() {
-  document.getElementById("temp").classList.toggle("show");
+  document.getElementById("customdrop").classList.toggle("show");
 }
+
+// window.onclick = function(event) {
+//   if (folderList.contains(event.target)) {
+//     folderList
+//   }
+// }
 
 window.onclick = function(event) {
   if (!addButton.contains(event.target) && !folderList.contains(event.target)) {

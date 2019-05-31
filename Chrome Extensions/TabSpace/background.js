@@ -6,8 +6,9 @@
 
 var windowlist = [];
 var folderDict = {};
-folderDict["bye"] = 2;
-folderDict["hi"] = 1;
+folderDict["--select--"] = [3];
+folderDict["bye"] = [2];
+folderDict["hi"] = [1];
 var currFolder;
 
 chrome.runtime.onInstalled.addListener(function() {
